@@ -1,24 +1,32 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "commonjs",
+    "lib": ["dom", "es2017"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "strictPropertyInitialization": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "target": "es5",
+    "jsx": "react",
+    "importHelpers": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "declaration": false,
+    "sourceMap": false,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "paths": {
+      "@blocks/*": ["./src/blocks/*"],
+      "@pages": ["./src/pages/index.ts"],
+      "@config": ["./src/config.ts"],
+      "@hocs": ["./src/HOCs/index.ts"],
+      "@hooks": ["./src/hooks/index.ts"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/utils/*"]
+    },
+    "typeRoots": ["node_modules/@types"]
   },
+  "include": ["src", "src/@types/**/*.d.ts", "./node_modules/@types"],
+  "exclude": ["**/*.js"]
 }
