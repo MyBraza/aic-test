@@ -1,4 +1,4 @@
-import { createGuid } from '../utils';
+import { createGuid } from '@utils/createGuid';
 
 export interface CollectionImpl<T> {
   total: number;
@@ -31,11 +31,8 @@ export interface UserCreateCommandImpl extends UserImpl {
   roleId: string;
 }
 
-export interface UserViewModel extends UserImpl {
-  role: UserRoleImpl;
-}
-
 export class UserCommand implements UserCreateCommandImpl {
+
   id: string;
   surname: string;
   name: string;

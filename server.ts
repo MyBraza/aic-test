@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { JsonDB } from 'node-json-db';
 import { Config } from 'node-json-db/dist/lib/JsonDBConfig';
-import { UserCreateCommand, UserRoleImpl, UserUpdateCommand, UserCreateCommandImpl } from './interfaces/users';
+import { UserCreateCommand, UserRoleImpl, UserUpdateCommand, UserCreateCommandImpl } from './src/interfaces/users';
 
 
 export class AppServer {

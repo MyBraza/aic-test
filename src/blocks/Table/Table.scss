@@ -1,0 +1,23 @@
+$border-width: 2px;
+
+.table {
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__cell {
+    margin: -$border-width;
+    padding: 0.5rem 1rem;
+    background: aqua;
+    min-width: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border: solid $border-width black;
+
+    &_bold {
+      @extend .table__cell;
+      font-weight: bold;
+    }
+  }
+}

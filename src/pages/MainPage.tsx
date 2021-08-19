@@ -1,12 +1,18 @@
 import React, {FC, useEffect} from 'react'
 import {getAxiosInstance} from "../api";
 import {Table} from "@blocks/Table";
+import {useDispatch} from "react-redux";
+import {saveUserData} from "@store/actions";
 
 const MainPage: FC = () => {
 
-  useEffect(()=>{
-    getAxiosInstance().get('users').then(({data})=>console.log(data))
-  },[]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getAxiosInstance().get('users').then(({data}) => {
+      dispatch(saveUserData({users: data.collection}))
+    })
+  }, []);
 
   return (
     <div>
