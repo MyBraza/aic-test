@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { JsonDB } from 'node-json-db';
 import { Config } from 'node-json-db/dist/lib/JsonDBConfig';
-import { UserCreateCommand, UserRoleImpl, UserUpdateCommand, UserCreateCommandImpl } from './src/interfaces/users';
+import { UserCreateCommand, UserRoleImpl, UserUpdateCommand, UserCreateCommandImpl } from './interfaces/users';
 
 
 export class AppServer {
@@ -19,6 +19,7 @@ export class AppServer {
     this.app.use(bodyParser.urlencoded({ extended: false }));
     this.app.use(bodyParser.json());
     this.app.use(cors());
+    this.app.use(express.static('dist'))
   }
 
   private initRoutes(): void {

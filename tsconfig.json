@@ -19,6 +19,7 @@
     "outDir": "./dist",
     "paths": {
       "@blocks/*": ["./src/blocks/*"],
+      "@icons":["./src/assets/icons/index.ts"],
       "@pages": ["./src/pages/index.ts"],
       "@config": ["./src/config.ts"],
       "@hocs": ["./src/HOCs/index.ts"],

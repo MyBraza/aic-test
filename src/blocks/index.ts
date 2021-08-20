@@ -1,1 +1,6 @@
 export * from './Table'
+export * from './IconButton'
+export * from './Button'
+export * from './ModalForm'
+export * from './ModalBackdrop'
+export * from './ModalConfirmation'

@@ -1,0 +1,16 @@
+.icon-button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  border-radius: 10%;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background: #999999;
+  }
+}

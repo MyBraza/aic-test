@@ -1,0 +1,26 @@
+.modal-confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  background-color: aliceblue;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__button-row {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 3rem;
+    width: 100%;
+
+    button {
+      font-size: 1.25rem;
+    }
+  }
+}

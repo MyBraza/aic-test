@@ -29,7 +29,11 @@ module.exports = {
       {
         test: /\.(s*)css$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      }
+      },
+      {
+        test: /\.svg$/i,
+        use: ['@svgr/webpack']
+      },
     ]
   },
   plugins: [new HtmlWebpackPlugin({template: './www/index.html'})]

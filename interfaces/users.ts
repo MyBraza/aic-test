@@ -1,4 +1,4 @@
-import { createGuid } from '@utils/createGuid';
+import {createGuid} from '../utils';
 
 export interface CollectionImpl<T> {
   total: number;
