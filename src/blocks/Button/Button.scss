@@ -1,15 +1,21 @@
+@import "src/variables";
+
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem 2rem;
-  background: #bb44bb;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  border-radius: 0.5rem;
+  background-color: $light-blue;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  border-radius: 0.3rem;
   border: none;
   color: white;
   transition: background-color 200ms ease-in-out;
   cursor: pointer;
+  width: 100%;
 
   &:hover {
-    background: #ff99ff;
+    background-color: lighten($light-blue, 20%)
   }
 }

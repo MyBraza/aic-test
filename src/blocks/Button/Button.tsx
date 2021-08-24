@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, {FC, ReactNode} from 'react'
 import classNames from 'classnames';
 import './Button.scss'
 
@@ -6,7 +6,7 @@ type TButtonProps = {
   onClick?: () => void
   className?: string
   type?: "button" | "submit" | "reset"
-  children: string
+  children: ReactNode
 }
 
 const Button: FC<TButtonProps> = ({onClick, className, type, children}: TButtonProps) => {

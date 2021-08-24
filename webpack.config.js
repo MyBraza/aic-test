@@ -15,6 +15,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
+    alias: {
+      src: path.resolve(__dirname, 'src/')
+    },
     modules: ['src', 'node_modules'],
     extensions: ['*', '.js', '.jsx', '.json', '.ts', '.tsx'],
     plugins: [new TsconfigPathsPlugin({configFile: './tsconfig.json'})]

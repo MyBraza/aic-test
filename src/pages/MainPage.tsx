@@ -8,13 +8,13 @@ import {
   setCurrentUser,
   updateUserData
 } from "@store/actions";
-import {Button} from "@blocks/Button";
 import './MainPage.scss'
 import {ModalForm} from '@blocks/ModalForm';
 import {IUserRequestBody, IUserViewModel} from "../interfaces";
 import {getAxiosInstance} from "../api";
 import {ModalConfirmation} from "@blocks/ModalConfirmation";
 import {getCurrentUserSelector} from "@store/selectors";
+import {Header} from "@blocks/Header";
 
 const MainPage: FC = () => {
 
@@ -52,7 +52,7 @@ const MainPage: FC = () => {
   };
 
   const onDeleteUserConfirm = useCallback(() => {
-    if (currentUser) getAxiosInstance().delete(`/users/${currentUser.id}`).then(() => dispatch(fetchUserData()))
+    if (currentUser) getAxiosInstance().delete(`/users/${currentUser.id}`).then(() => dispatch(fetchUserData()));
     setIsModalDeleteUserHidden(true)
   }, [currentUser]);
 
@@ -63,12 +63,10 @@ const MainPage: FC = () => {
 
   return (
     <div>
-      <Table onEdit={onEditUser} onDelete={onDeleteUser}/>
-      <div className='button-row'>
-        <Button onClick={onAddUser}>
-          Добавить пользователя
-        </Button>
-      </div>
+      <Header onAddUser={onAddUser}/>
+      <main>
+        <Table onEdit={onEditUser} onDelete={onDeleteUser}/>
+      </main>
       <ModalForm hidden={isModalFormHidden}
                  onCancel={() => setIsModalFormHidden(true)}
                  handleSubmit={handleSubmit}/>

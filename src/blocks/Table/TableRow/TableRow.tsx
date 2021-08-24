@@ -31,9 +31,9 @@ const TableRow: FC<TTableProps> =
     } : undefined;
 
     const row =
-      user ? (<>
+      user && id !== undefined ? (<>
           <div className='table__cell'>
-            {`${user.surname} ${user.name[0]}.${user.middleName[0]}.`}
+            {`${id + 1} ${user.surname} ${user.name[0]}.${user.middleName[0]}.`}
           </div>
           <div className='table__cell'>
             {user.role?.title}
@@ -63,6 +63,8 @@ const TableRow: FC<TTableProps> =
             <IconButton
               onClick={onClickEdit ?? (() => null)}
               icon={PenIcon}/>
+          </div>
+          <div className='table__cell_actions'>
             <IconButton
               onClick={onClickDelete ?? (() => null)}
               icon={TrashCan}/>

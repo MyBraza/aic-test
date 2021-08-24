@@ -3,7 +3,6 @@ import './Table.scss'
 import {getUsersSelector} from "@store/selectors";
 import {useSelector} from "react-redux";
 import TableRow from "./TableRow/TableRow";
-import {IconButton} from "@blocks/IconButton";
 import {ArrowDown, ArrowUp} from "@icons";
 import {IUserViewModel} from "../../interfaces";
 
@@ -39,45 +38,56 @@ const Table: FC<TTableProps> = ({onEdit, onDelete}: TTableProps) => {
   }, [users, isSortedDown]);
 
   return (
-    <div className='table'>
-      <TableRow className='table__row'>
-        <div className='table__cell_bold'>
-          Фамилия И.О.
-          <IconButton className='table__sort-icon' onClick={() => setIsSortedDown(-isSortedDown)}
-                      icon={isSortedDown > 0 ? ArrowDown : ArrowUp}/>
-        </div>
-        <div className='table__cell_bold'>
-          Роль
-        </div>
-        <div className='table__cell_bold'>
-          Дата рождения
-        </div>
-        <div className='table__cell_bold'>
-          Место рождения
-        </div>
-        <div className='table__cell_bold'>
-          Почта
-        </div>
-        <div className='table__cell_bold'>
-          Номер телефона
-        </div>
-        <div
-          className='table__cell_bold'>
-          Дата регистрации
-        </div>
-        <div
-          className='table__cell_bold'>
-          Последнее изменение
-        </div>
-        <div
-          className='table__cell_bold'>
-          Действия
-        </div>
-      </TableRow>
+    <>
+      <div className='table__info-row'>
+        <div className='table__sort-icon'
+             onClick={() => setIsSortedDown(-isSortedDown)}>Сортировать от А до
+          Я {isSortedDown > 0 ?
+            <ArrowDown/> : <ArrowUp/>}</div>
+        <div className='table__total-users'> Всего пользователей: {users.length}</div>
+      </div>
+      <div className='table'>
+        <TableRow className='table__row_heading'>
+          <div className='table__cell_bold'>
+            № ФИО пользователя
+          </div>
+          <div className='table__cell_bold'>
+            Роль
+          </div>
+          <div className='table__cell_bold'>
+            Дата рождения
+          </div>
+          <div className='table__cell_bold'>
+            Место рождения
+          </div>
+          <div className='table__cell_bold'>
+            Почта
+          </div>
+          <div className='table__cell_bold'>
+            Номер телефона
+          </div>
+          <div
+            className='table__cell_bold'>
+            Регистрация
+          </div>
+          <div
+            className='table__cell_bold'>
+            Изменение
+          </div>
+          <div
+            className='table__cell_bold'>
+            ред.
+          </div>
+          <div
+            className='table__cell_bold'>
+            удалить
+          </div>
+        </TableRow>
 
-      {tableRows}
+        {tableRows}
 
-    </div>
+      </div>
+    </>
   )
 };
 

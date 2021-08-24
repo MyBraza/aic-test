@@ -19,7 +19,7 @@ const IconButton: FC<TIconButtonProps> = ({onClick, icon, className}: TIconButto
     onClick={onClick}
     className={classNames("icon-button", className)}
   >
-    <Icon className=""/>
+    <Icon className="icon-button__icon"/>
   </div>)
 };
 

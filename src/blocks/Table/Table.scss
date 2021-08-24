@@ -1,41 +1,72 @@
-$border-width: 2px;
+@import "src/variables";
+
+$border-width: 1px;
 
 .table {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 
-  padding: $border-width;
-  margin: 2rem;
+  &__sort-icon {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    column-gap: 1rem;
+    cursor: pointer;
+    user-select: none;
 
-  & &__sort-icon {
-    padding: 0.25rem;
-    width: 1rem;
-    height: 1rem;
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__total-users {
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  &__info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
   }
 
   &__row {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: 3fr 3fr 2fr 3fr 3fr 3fr 2fr 2fr max-content max-content;
+    border: solid $border-width $dim;
+    border-radius: 0.5rem;
+
+    &_heading {
+      @extend .table__row;
+      border: none;
+    }
   }
 
   &__cell {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: -$border-width;
-    padding: 0.5rem 1rem;
-    background: antiquewhite;
+    font-size: 0.8rem;
+    padding: 1rem;
     min-width: 5rem;
     white-space: nowrap;
     overflow: hidden;
-    border: solid $border-width black;
+    border-right: solid $border-width $dim;
+
+    &:last-child {
+      border: none;
+    }
 
     &_bold {
       @extend .table__cell;
+      font-size: 0.7rem;
       font-weight: bold;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
       user-select: none;
+      border: none;
+      padding-bottom: 0;
+      color: $dim;
     }
 
     &_actions {
