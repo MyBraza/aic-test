@@ -7,7 +7,9 @@ type TModalBackdropProps = {
 }
 
 const ModalBackdrop: FC<TModalBackdropProps> = ({hidden, children}: TModalBackdropProps) => (
-  <div className='modal-backdrop' style={hidden ? {display: 'none'} : {}}> {children}</div>
+  <div className='modal-backdrop' style={hidden ? {display: 'none'} : {}}>
+    <div className='modal-backdrop__container'>{children}</div>
+  </div>
 );
 
 ModalBackdrop.displayName = 'ModalBackdrop';

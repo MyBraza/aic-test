@@ -73,7 +73,7 @@ const MainPage: FC = () => {
       <ModalConfirmation onAccept={onDeleteUserConfirm}
                          onCancel={() => setIsModalDeleteUserHidden(true)}
                          hidden={isModalDeleteUserHidden}
-                         text='Вы действительно хотите удалить пользователя?'>
+                         text='Удалить пользователя?'>
 
       </ModalConfirmation>
     </div>

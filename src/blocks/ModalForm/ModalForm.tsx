@@ -8,6 +8,8 @@ import {IUserRequestBody, IUserViewModel} from "../../interfaces";
 import ModalFormSelect from "@blocks/ModalForm/ModalFormSelect/ModalFormSelect";
 import {useSelector} from "react-redux";
 import {getCurrentUserSelector, getRolesSelector} from "@store/selectors";
+import {IconButton} from '@blocks/IconButton';
+import {Cross} from "@icons";
 
 type TModalFormProps = {
   hidden?: boolean
@@ -99,7 +101,7 @@ const ModalForm: FC<TModalFormProps> = ({hidden, onCancel, handleSubmit}: TModal
               surname,
               name,
               middleName,
-              birthday: birthday.toString(),
+              birthday: birthday.toString().slice(0, 10),
               birthPlace,
               email,
               phoneNumber,
@@ -113,6 +115,10 @@ const ModalForm: FC<TModalFormProps> = ({hidden, onCancel, handleSubmit}: TModal
   return (
     <ModalBackdrop hidden={hidden}>
       <form onSubmit={formik.handleSubmit} className='modal-form'>
+        <h1 className='modal-form__heading'>
+          {currentUser ? 'Редактирование' : 'Добавить пользователя'}
+        </h1>
+        <IconButton className='modal-form__cross' icon={Cross} onClick={onCancel}/>
         <div className='modal-form__row'>
           <ModalFormInput name='surname'
                           type='text'
@@ -196,8 +202,7 @@ const ModalForm: FC<TModalFormProps> = ({hidden, onCancel, handleSubmit}: TModal
           </ModalFormInput>
         </div>
         <div className='modal-form__row'>
-          <Button type="submit">Отправить</Button>
-          <Button type="button" onClick={onCancel}>Отменить</Button>
+          <Button type="submit">{currentUser ? 'Сохранить изменения в профиле' : 'Добавить пользователя в таблицу'}</Button>
         </div>
       </form>
     </ModalBackdrop>

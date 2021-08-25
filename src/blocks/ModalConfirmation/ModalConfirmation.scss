@@ -1,16 +1,18 @@
+@import "src/variables";
+
 .modal-confirmation {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3rem;
-  background-color: aliceblue;
+  background-color: white;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
   border-radius: 1rem;
 
   h1 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    color: $blue;
+    margin: 0 4rem 3rem;
   }
 
   &__button-row {

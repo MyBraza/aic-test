@@ -23,6 +23,15 @@
     background: $gray;
     text-transform: uppercase;
     font-weight: bold;
+    @media screen and (max-width: $md) {
+      padding: 0.5rem;
+    }
+
+    &__text {
+      @media screen and (max-width: $md) {
+        display: none;
+      }
+    }
 
     &:hover {
       background-color: lighten($gray, 20%)

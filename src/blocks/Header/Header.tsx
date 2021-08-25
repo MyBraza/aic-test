@@ -13,7 +13,7 @@ const Header: FC<THeaderProps> = ({onAddUser}: THeaderProps) => {
     <header className='header'>
       <h1 className='header__heading'>Пользователи</h1>
       <Button className='header__button' onClick={onAddUser}>
-        <div>Добавить нового пользователя</div>
+        <div className='header__button__text'>Добавить нового пользователя</div>
         <Plus/>
       </Button>
     </header>

@@ -1,5 +1,24 @@
-body {
+@import "variables";
+
+html {
   font-family: inter, sans-serif;
+  @media screen and (max-width: $md) {
+    font-size: 8pt
+  }
+}
+
+body {
   margin: 0;
   padding: 0;
+}
+
+input, select {
+  border: solid 1px $dim;
+  border-radius: 0.25rem;
+  padding: 1.4rem 1rem 0.4rem;
+  outline: none;
+}
+
+select {
+  cursor: pointer;
 }
