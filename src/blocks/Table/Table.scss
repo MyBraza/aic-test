@@ -65,13 +65,15 @@ $border-width: 1px;
       .table__cell {
         display: none;
         grid-column: span 2;
+        padding: 1rem 0;
+        margin: 0 1rem;
       }
       .table__cell:first-child {
         display: flex;
       }
       .table__cell_actions {
         grid-column: span 1;
-        border-top: solid $border-width $dim;
+        margin: 0;
         border-right: solid $border-width $dim;
       }
     }
@@ -83,8 +85,11 @@ $border-width: 1px;
         display: flex;
         @media screen and (max-width: $md) {
           border-bottom: solid $border-width $dim;
-          padding: 1rem 0;
-          margin: 0 1rem;
+        }
+      }
+      .table__cell_actions {
+        @media screen and (max-width: $md) {
+          border-bottom: none;
         }
       }
     }
